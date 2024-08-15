@@ -1,4 +1,4 @@
-#TraceId, SpanID For Springboot
+# TraceId, SpanID For Springboot
 
 모놀리틱 Springboot 3.x버전과 kotlin으로 구성한 환경입니다
 
