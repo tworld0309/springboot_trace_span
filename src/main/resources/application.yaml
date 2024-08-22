@@ -1,2 +1,35 @@
+# 기본적으로 활성화할 프로파일 설정
+spring:
+  profiles:
+    active: local
+
 server:
   port: 9090
+
+---
+
+# local 프로파일 설정
+spring:
+  config:
+    activate:
+      on-profile: local
+
+logging:
+  file:
+    name: logs/app.log
+    path: logs
+
+
+---
+
+# develop 프로파일 설정
+spring:
+  config:
+    activate:
+      on-profile: develop
+
+logging:
+  file:
+    name: /app/logs/app.log
+    path: /app/logs
+
