@@ -21,8 +21,8 @@ class TracingComponent {
             tracer.spanBuilder(spanName).startSpan()
         }
 
-        MDC.put("traceId", span.spanContext.traceId)
-        MDC.put("spanId", span.spanContext.spanId)
+        MDC.put("trace_id", span.spanContext.traceId)
+        MDC.put("span_id", span.spanContext.spanId)
         return span
     }
 

@@ -24,8 +24,8 @@ class OpenTelemetryConfig {
         val rootSpan = tracer.spanBuilder("rootSpan").startSpan()
 
         // MDC에 Trace ID를 저장하여 로깅에 포함할 수 있습니다.
-        MDC.put("traceId", rootSpan.spanContext.traceId)
-        System.out.println("traceId : {} " + rootSpan.spanContext.traceId)
+        MDC.put("trace_id", rootSpan.spanContext.traceId)
+        System.out.println("trace_id : {} " + rootSpan.spanContext.traceId)
         System.out.println("rootSpan : {} " + rootSpan)
     }
 }
