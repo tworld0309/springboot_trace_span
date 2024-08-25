@@ -9,10 +9,10 @@ class TestService {
     private val log = LoggerFactory.getLogger(TestService::class.java)
 
     fun callService1() {
-        log.info("log-info - call testService1")
+        log.debug("log-info - call testService1")
     }
 
     fun callService2() {
-        log.info("log-info - call testService2")
+        log.debug("log-info - call testService2")
     }
 }

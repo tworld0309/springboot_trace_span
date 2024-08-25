@@ -1,6 +1,14 @@
 <configuration>
     <property name="LOG_PATH" value="${LOG_PATH:-logs}"/>
 
+    <logger name="com.example" level="DEBUG">
+        <appender-ref ref="CONSOLE"/>
+    </logger>
+
+    <root level="OFF">
+        <appender-ref ref="CONSOLE"/>
+    </root>
+
     <!-- Console Appender -->
     <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
         <encoder>
@@ -25,7 +33,7 @@
     </appender>
 
     <!-- Root Logger 설정: 로그를 콘솔과 파일에 동시에 출력 -->
-    <root level="INFO">
+    <root level="DEBUG">
         <appender-ref ref="STDOUT"/>
         <appender-ref ref="FILE"/>
     </root>

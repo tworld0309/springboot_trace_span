@@ -1,14 +1,17 @@
 package com.example.config
 
+import com.example.test.service.TestService
 import io.opentelemetry.api.GlobalOpenTelemetry
 import io.opentelemetry.api.trace.Tracer
 import jakarta.annotation.PostConstruct
+import org.slf4j.LoggerFactory
 import org.slf4j.MDC
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
 
 @Configuration
 class OpenTelemetryConfig {
+    private val log = LoggerFactory.getLogger(OpenTelemetryConfig::class.java)
 
     @Bean
     fun tracer(): Tracer {
@@ -25,7 +28,7 @@ class OpenTelemetryConfig {
 
         // MDC에 Trace ID를 저장하여 로깅에 포함할 수 있습니다.
         MDC.put("trace_id", rootSpan.spanContext.traceId)
-        System.out.println("trace_id : {} " + rootSpan.spanContext.traceId)
-        System.out.println("rootSpan : {} " + rootSpan)
+        log.debug("trace_id : {} ", rootSpan.spanContext.traceId)
+        log.debug("rootSpan : {} ", rootSpan)
     }
 }
